@@ -1,0 +1,16 @@
+<mat-toolbar class="header">
+  <button matIconButton (click)="sideNav?.toggle()" aria-label="Abrir o menu lateral">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <a routerLink="/" class="logo-link" aria-label="Ir para a página inicial">
+    <img src="assets/tech_store_icon_vectorized.svg" class="logo-imagem" alt="Tech Store Logo">
+    <span>Tech Store</span>
+  </a>
+  
+  <span class="spacer"></span>
+  
+  <button matIconButton class="shopping_cart-icon" aria-label="Ir para o carrinho de compras">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+</mat-toolbar>

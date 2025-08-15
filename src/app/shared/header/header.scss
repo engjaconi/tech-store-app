@@ -1,0 +1,22 @@
+.header {
+  background-color: lightgrey;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+}
+
+.logo-link:hover {
+  cursor: pointer;
+}
+
+.logo-imagem {
+  height: 50px;
+}
