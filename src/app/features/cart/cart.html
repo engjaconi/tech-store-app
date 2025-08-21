@@ -1,0 +1,3 @@
+<h2>Livros Escolhidos</h2>
+<app-book-collection class="book-collection" [books]="(bookCollection$ | async)!" (remove)="onRemove($event)">
+</app-book-collection>

@@ -9,7 +9,14 @@ import { SideNav } from './shared/side-nav/side-nav';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, SideNav, MatSidenavModule, MatButtonModule, MatIconModule],
+  imports: [
+    RouterOutlet, 
+    Header, 
+    SideNav, 
+    MatSidenavModule, 
+    MatButtonModule, 
+    MatIconModule,
+  ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

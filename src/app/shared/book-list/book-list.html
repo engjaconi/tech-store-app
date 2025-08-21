@@ -1,0 +1,8 @@
+@for (book of books; track book.id) {
+    <div class="book-item">
+        <p>{{book.volumeInfo.title}}</p>
+        <span> by {{book.volumeInfo.authors}}</span>
+        <img src="{{book.volumeInfo.imageLinks?.thumbnail}}" alt="{{book.volumeInfo.title}} thumbnail" />
+        <button (click)="add.emit(book.id)" data-test="add-button">Adicionar a coleção</button>
+    </div>
+}
