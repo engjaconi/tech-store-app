@@ -10,8 +10,14 @@ import { Book } from "../model/books.model";
 export class GoogleBooksService {
     constructor(private http: HttpClient) { }
 
-    getBooks(): Observable<Array<Book>> {
-        return this.http.get<{ items: Book[] }>('https://www.googleapis.com/books/v1/volumes?maxResults=5&orderBy=relevance&q=desenvolvimento-de-software')
+    getBooks(filter: string): Observable<Array<Book>> {
+        if (filter === undefined || filter === null || filter.trim() === '') {
+            return new Observable<Array<Book>>(subscriber => {
+                subscriber.next([]);
+                subscriber.complete();
+            });
+        }
+        return this.http.get<{ items: Book[] }>('https://www.googleapis.com/books/v1/volumes?maxResults=5&orderBy=relevance&q=' + filter)
             .pipe(map(books => books.items || []));
     }
 }

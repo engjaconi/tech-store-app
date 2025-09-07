@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -10,11 +10,11 @@ import { SideNav } from './shared/side-nav/side-nav';
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet, 
-    Header, 
-    SideNav, 
-    MatSidenavModule, 
-    MatButtonModule, 
+    RouterOutlet,
+    Header,
+    SideNav,
+    MatSidenavModule,
+    MatButtonModule,
     MatIconModule,
   ],
   templateUrl: './app.html',

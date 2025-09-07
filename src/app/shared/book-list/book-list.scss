@@ -1,0 +1,37 @@
+mat-grid-tile {
+  width: 250px;
+  height: 350px;
+  max-height: min-content;
+}
+
+mat-card {
+  padding: 1rem;
+
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+mat-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+img {
+  height: 250px;
+  width: 100%;
+  object-fit: contain;
+}
+
+mat-card-title,
+mat-card-subtitle {
+  height: 1.5rem;
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}

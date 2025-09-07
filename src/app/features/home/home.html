@@ -1,3 +1,17 @@
-<h2>Books</h2>
-<app-book-list class="book-list" [books]="(books$ | async)!" (add)="onAdd($event)"></app-book-list>
+<div class="filter">
+  <mat-form-field class="filter-book">
+    <mat-label>Informe o título do livro para pesquisar</mat-label>
+    <input matInput type="text" #filterInput (keyup.enter)="findBookByFilter(filterInput.value)">
+    @if (filterInput.value) {
+    <button matSuffix matIconButton aria-label="Pesquisar livro" (click)="findBookByFilter(filterInput.value)">
+      <mat-icon>search</mat-icon>
+    </button>
+    }
+  </mat-form-field>
+  @if (isLoading) {
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  }
+</div>
 
+<app-book-list class="book-list" [books]="(books$ | async)!" [filter]="filterInput.value"
+  (add)="onAdd($event)"></app-book-list>

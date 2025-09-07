@@ -1,8 +1,27 @@
-@for (book of books; track book.id) {
-    <div class="book-item">
-        <p>{{book.volumeInfo.title}}</p>
-        <span> by {{book.volumeInfo.authors}}</span>
-        <img src="{{book.volumeInfo.imageLinks?.thumbnail}}" alt="{{book.volumeInfo.title}} thumbnail" />
-        <button (click)="add.emit(book.id)" data-test="add-button">Adicionar a coleção</button>
-    </div>
-}
+<mat-grid-list cols="5" rowHeight="1:1.3" gutterSize="16px">
+    @for (book of books; track book.id) {
+    @if (filter != null && book.volumeInfo.title.toLowerCase().includes(filter.toLowerCase())) {
+    <mat-grid-tile>
+        <mat-card class="book-card">
+            <!-- Imagem -->
+            <mat-card-header>
+                <mat-card-title [title]="book.volumeInfo.title">{{ book.volumeInfo.title }}</mat-card-title>
+                <mat-card-subtitle [title]="book.volumeInfo.authors?.join(', ')">
+                    {{ book.volumeInfo.authors?.join(', ') }}
+                </mat-card-subtitle>
+            </mat-card-header>
+
+            <img mat-card-image [src]="book.volumeInfo.imageLinks?.thumbnail"
+                [alt]="book.volumeInfo.title + ' thumbnail'" />
+
+            <!-- Ações -->
+            <mat-card-actions>
+                <button mat-raised-button color="primary" (click)="add.emit(book.id)" data-test="add-button">
+                    &#43; Adicionar à coleção
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+    }
+    }
+</mat-grid-list>

@@ -1,0 +1,18 @@
+* {
+    display: flex-box;
+    direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+mat-form-field {
+    margin: 20px 0;
+    width: 50%;
+}
+
+app-book-list {
+    width: 100%;
+    height: 100%;
+    align-items: start;
+}

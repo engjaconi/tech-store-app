@@ -1,6 +1,32 @@
-@for (book of books; track book.id) {
-<div class="book-item">
-    <p>{{book.volumeInfo.title}}</p><span> by {{book.volumeInfo.authors}}</span>
-    <button (click)="remove.emit(book.id)" data-test="remove-button">Remove from Collection</button>
-</div>
+<mat-grid-list cols="5" rowHeight="1:1.3" gutterSize="16px">
+    @for (book of books; track book.id) {
+    <mat-grid-tile>
+        <mat-card class="book-card">
+            <!-- Imagem -->
+            <mat-card-header>
+                <mat-card-title [title]="book.volumeInfo.title">{{ book.volumeInfo.title }}</mat-card-title>
+
+                <mat-card-subtitle [title]="book.volumeInfo.authors?.join(', ')">
+                    {{ book.volumeInfo.authors?.join(', ') }}
+                </mat-card-subtitle>
+            </mat-card-header>
+
+            <img mat-card-image [src]="book.volumeInfo.imageLinks?.thumbnail"
+                [alt]="book.volumeInfo.title + ' thumbnail'" />
+
+            <!-- Ações -->
+            <mat-card-actions>
+                <button mat-raised-button color="primary" (click)="remove.emit(book.id)" data-test="remove-button">
+                    &#45; Remover da coleção
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+    }
+</mat-grid-list>
+@if(books.length > 0) {
+<button matButton="filled" (click)="adicionarLivrosBiblioteca()">Adicionar na minha biblioteca</button>
+}
+@if(books.length === 0) {
+<p>Você não possui livros na sua coleção. Adicione livros para vê-los aqui!</p>
 }
