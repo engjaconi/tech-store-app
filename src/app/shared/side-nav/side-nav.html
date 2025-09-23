@@ -6,3 +6,17 @@
     <img src="assets/tech_store_icon_vectorized.svg" class="logo-imagem" alt="Tech Store Logo">
     <span class="header-title">Tech Store</span>
 </div>
+<hr>
+
+<a class="row" mat-list-item routerLink="/home" routerLinkActive="active-link" (click)="sideNav?.close()">
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+</a>
+<a class="row" mat-list-item routerLink="/cart" routerLinkActive="active-link" (click)="sideNav?.close()">
+    <mat-icon>shopping_cart</mat-icon>
+    <span>Carrinho</span>
+</a>
+<a class="row" mat-list-item routerLink="/library" routerLinkActive="active-link" (click)="sideNav?.close()">
+    <mat-icon>collections_bookmark</mat-icon>
+    <span>Minha Biblioteca</span>
+</a>

@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { Book } from "../model/books.model";
+import { Book } from "../../../core/model/books.model";
 import { BooksApiActions } from "./books.actions";
 
 export var initialState: Array<Book> = [];

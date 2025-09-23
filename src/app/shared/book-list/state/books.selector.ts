@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { Book } from "../model/books.model";
+import { Book } from "../../../core/model/books.model";
 
 export const selectBooks = createFeatureSelector<ReadonlyArray<Book>>('books');
 
